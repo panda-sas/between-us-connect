@@ -9,7 +9,7 @@ interface NavigationProps {
 const navItems = [
   { id: 'home', label: 'Home', icon: Home },
   { id: 'people', label: 'People', icon: Users },
-  { id: 'events', label: 'Events', icon: Calendar },
+  { id: 'feed', label: 'Feed', icon: Calendar },
   { id: 'messages', label: 'Messages', icon: MessageCircle }
 ];
 

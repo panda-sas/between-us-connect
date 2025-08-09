@@ -42,11 +42,11 @@ export const HomeScreen = ({ onNavigate }: HomeScreenProps) => {
             </Button>
             <Button
               variant="outline"
-              onClick={() => onNavigate('events')}
+              onClick={() => onNavigate('feed')}
               className="h-auto p-4 flex-col gap-2 rounded-xl"
             >
               <Calendar className="w-6 h-6 text-secondary" />
-              <span className="text-sm">Browse Events</span>
+              <span className="text-sm">Browse Feed</span>
             </Button>
           </CardContent>
         </Card>
@@ -78,11 +78,11 @@ export const HomeScreen = ({ onNavigate }: HomeScreenProps) => {
                   <Calendar className="w-5 h-5 text-secondary" />
                 </div>
                 <div>
-                  <p className="font-medium">3 upcoming events</p>
-                  <p className="text-sm text-muted-foreground">This week</p>
+                  <p className="font-medium">5 new posts</p>
+                  <p className="text-sm text-muted-foreground">In your feed</p>
                 </div>
               </div>
-              <Button variant="ghost" size="sm" onClick={() => onNavigate('events')}>
+              <Button variant="ghost" size="sm" onClick={() => onNavigate('feed')}>
                 View
               </Button>
             </div>
@@ -105,7 +105,7 @@ export const HomeScreen = ({ onNavigate }: HomeScreenProps) => {
             <div className="flex gap-3">
               <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0" />
               <div className="flex-1">
-                <p className="text-sm">New event: <span className="font-medium">Weekend Hike</span></p>
+                <p className="text-sm">New post: <span className="font-medium">"Anyone else feeling overwhelmed?"</span></p>
                 <p className="text-xs text-muted-foreground">4 hours ago</p>
               </div>
             </div>

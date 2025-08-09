@@ -4,14 +4,14 @@ import { OnboardingFlow } from './OnboardingFlow';
 import { Navigation } from './Navigation';
 import { HomeScreen } from './HomeScreen';
 import { PeopleScreen } from './PeopleScreen';
-import { EventsScreen } from './EventsScreen';
-import { EventDetails } from './EventDetails';
+import { FeedScreen } from './FeedScreen';
+import { PostDetails } from './PostDetails';
 import { MessagesScreen } from './MessagesScreen';
 
 export const ForkOrFlowApp = () => {
   const [isOnboarded, setIsOnboarded] = useState(false);
   const [activeTab, setActiveTab] = useState('home');
-  const [selectedEventId, setSelectedEventId] = useState<number | null>(null);
+  const [selectedPostId, setSelectedPostId] = useState<number | null>(null);
 
   const handleOnboardingComplete = () => {
     setIsOnboarded(true);
@@ -19,15 +19,15 @@ export const ForkOrFlowApp = () => {
 
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
-    setSelectedEventId(null); // Reset event selection when changing tabs
+    setSelectedPostId(null); // Reset post selection when changing tabs
   };
 
-  const handleEventSelect = (eventId: number) => {
-    setSelectedEventId(eventId);
+  const handlePostSelect = (postId: number) => {
+    setSelectedPostId(postId);
   };
 
-  const handleEventBack = () => {
-    setSelectedEventId(null);
+  const handlePostBack = () => {
+    setSelectedPostId(null);
   };
 
   if (!isOnboarded) {
@@ -42,28 +42,27 @@ export const ForkOrFlowApp = () => {
     <Layout>
       <div className="relative">
         {/* Main Content */}
-        {selectedEventId ? (
-          <EventDetails
-            eventId={selectedEventId}
-            onBack={handleEventBack}
-            onNavigate={handleTabChange}
+        {selectedPostId ? (
+          <PostDetails
+            postId={selectedPostId}
+            onBack={handlePostBack}
           />
         ) : (
           <>
             {activeTab === 'home' && <HomeScreen onNavigate={handleTabChange} />}
             {activeTab === 'people' && <PeopleScreen onNavigate={handleTabChange} />}
-            {activeTab === 'events' && (
-              <EventsScreen
+            {activeTab === 'feed' && (
+              <FeedScreen
                 onNavigate={handleTabChange}
-                onSelectEvent={handleEventSelect}
+                onSelectPost={handlePostSelect}
               />
             )}
             {activeTab === 'messages' && <MessagesScreen onNavigate={handleTabChange} />}
           </>
         )}
 
-        {/* Bottom Navigation - Hidden when viewing event details */}
-        {!selectedEventId && (
+        {/* Bottom Navigation - Hidden when viewing post details */}
+        {!selectedPostId && (
           <Navigation activeTab={activeTab} onTabChange={handleTabChange} />
         )}
       </div>
