@@ -1,7 +1,7 @@
-import { ForkOrFlowApp } from '@/components/ForkOrFlowApp';
+import { BetweenUsApp } from '@/components/BetweenUsApp';
 
 const Index = () => {
-  return <ForkOrFlowApp />;
+  return <BetweenUsApp />;
 };
 
 export default Index;

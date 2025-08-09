@@ -8,7 +8,7 @@ import { FeedScreen } from './FeedScreen';
 import { PostDetails } from './PostDetails';
 import { MessagesScreen } from './MessagesScreen';
 
-export const ForkOrFlowApp = () => {
+export const BetweenUsApp = () => {
   const [isOnboarded, setIsOnboarded] = useState(false);
   const [activeTab, setActiveTab] = useState('home');
   const [selectedPostId, setSelectedPostId] = useState<number | null>(null);

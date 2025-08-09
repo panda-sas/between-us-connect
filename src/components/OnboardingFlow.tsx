@@ -61,7 +61,7 @@ export const OnboardingFlow = ({ onComplete }: OnboardingFlowProps) => {
       <Card className="w-full max-w-md shadow-warm animate-fade-in">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-semibold text-foreground">
-            {step === 1 && "Welcome to Fork or Flow"}
+            {step === 1 && "Welcome to Between Us"}
             {step === 2 && "About You"}
             {step === 3 && "Your Journey"}
             {step === 4 && "Your Interests"}
